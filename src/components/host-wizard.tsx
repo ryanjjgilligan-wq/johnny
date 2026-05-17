@@ -22,8 +22,8 @@ const STEPS = [
 
 const SAMPLE_PHOTO_POOL = [
   "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-  "https://images.unsplash.com/photo-1605547800101-7bb1a55e0caf?w=1200&q=80",
-  "https://images.unsplash.com/photo-1568355099915-0e4e3d39b4ad?w=1200&q=80",
+  "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1200&q=80",
+  "https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?w=1200&q=80",
   "https://images.unsplash.com/photo-1597633425046-08f5110420b5?w=1200&q=80",
   "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&q=80",
   "https://images.unsplash.com/photo-1530041539828-114de669390e?w=1200&q=80",

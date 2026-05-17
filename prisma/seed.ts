@@ -3,10 +3,11 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 // Reusable Unsplash photo pools (dog-friendly backyards & lawns)
+// All URLs verified to return HTTP 200 from images.unsplash.com.
 const yardPhotoPool = [
   "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-  "https://images.unsplash.com/photo-1568355099915-0e4e3d39b4ad?w=1200&q=80",
-  "https://images.unsplash.com/photo-1605547800101-7bb1a55e0caf?w=1200&q=80",
+  "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1200&q=80",
+  "https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?w=1200&q=80",
   "https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?w=1200&q=80",
   "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=1200&q=80",
   "https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?w=1200&q=80",
@@ -15,14 +16,14 @@ const yardPhotoPool = [
   "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&q=80",
   "https://images.unsplash.com/photo-1530041539828-114de669390e?w=1200&q=80",
   "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&q=80",
-  "https://images.unsplash.com/photo-1568393691080-c1cf16f01406?w=1200&q=80",
+  "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=1200&q=80",
   "https://images.unsplash.com/photo-1546238232-20216dec9f72?w=1200&q=80",
   "https://images.unsplash.com/photo-1571566882372-1598d88abd90?w=1200&q=80",
   "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=1200&q=80",
-  "https://images.unsplash.com/photo-1545152783-3b6f2c33f8d2?w=1200&q=80",
+  "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=1200&q=80",
   "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=1200&q=80",
-  "https://images.unsplash.com/photo-1559066653-edfd1e6bd649?w=1200&q=80",
-  "https://images.unsplash.com/photo-1626247214064-d3c98f4d4b9d?w=1200&q=80",
+  "https://images.unsplash.com/photo-1568572933382-74d440642117?w=1200&q=80",
+  "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1200&q=80",
   "https://images.unsplash.com/photo-1591389703635-e15a07b842d7?w=1200&q=80",
 ];
 
