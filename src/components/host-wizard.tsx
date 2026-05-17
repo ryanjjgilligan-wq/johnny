@@ -21,14 +21,14 @@ const STEPS = [
 ] as const;
 
 const SAMPLE_PHOTO_POOL = [
-  "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-  "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1200&q=80",
-  "https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?w=1200&q=80",
-  "https://images.unsplash.com/photo-1597633425046-08f5110420b5?w=1200&q=80",
-  "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&q=80",
-  "https://images.unsplash.com/photo-1530041539828-114de669390e?w=1200&q=80",
-  "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&q=80",
-  "https://images.unsplash.com/photo-1546238232-20216dec9f72?w=1200&q=80",
+  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+  "https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?w=1200&q=80",
+  "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=1200&q=80",
+  "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=1200&q=80",
+  "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80",
+  "https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=1200&q=80",
+  "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=80",
 ];
 
 type FormState = {

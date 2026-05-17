@@ -1,15 +1,18 @@
 import { prisma } from "@/lib/prisma";
 import { parseJsonField } from "@/lib/utils";
 import { CategoryRail } from "@/components/category-rail";
+import { CityTabs } from "@/components/city-tabs";
 import { YardCard, type YardCardData } from "@/components/yard-card";
 import type { AmenityKey } from "@/lib/amenities";
 
 export const dynamic = "force-dynamic";
 
+const DEFAULT_CITY = "Seattle";
+
 export default async function HomePage({
   searchParams,
 }: {
-  searchParams: { amenity?: string };
+  searchParams: { amenity?: string; city?: string };
 }) {
   const yards = await prisma.yard.findMany({
     include: { reviews: { select: { rating: true } } },
@@ -17,8 +20,13 @@ export default async function HomePage({
   });
 
   const amenityFilter = searchParams.amenity;
+  // Default to Seattle, WA. Explicit `?city=All` clears the filter.
+  const activeCity = searchParams.city ?? DEFAULT_CITY;
+  const cityFilter = activeCity === "All" ? null : activeCity;
 
-  const cards: YardCardData[] = yards
+  type Card = YardCardData & { amenities: AmenityKey[]; cityKey: string };
+
+  const cards: Card[] = yards
     .map((y) => {
       const amenities = parseJsonField<AmenityKey[]>(y.amenities, []);
       const photos = parseJsonField<string[]>(y.photos, []);
@@ -37,19 +45,20 @@ export default async function HomePage({
         rating: ratingAvg,
         reviewCount: y.reviews.length,
         amenities,
+        cityKey: y.city,
       };
     })
-    .filter((y) =>
-      amenityFilter ? (y as { amenities: AmenityKey[] }).amenities.includes(amenityFilter as AmenityKey) : true,
-    );
+    .filter((y) => (cityFilter ? y.cityKey === cityFilter : true))
+    .filter((y) => (amenityFilter ? y.amenities.includes(amenityFilter as AmenityKey) : true));
 
   return (
     <>
+      <CityTabs activeCity={activeCity} />
       <CategoryRail />
       <section className="container py-6 md:py-8">
         {cards.length === 0 ? (
           <div className="text-center py-20 text-muted-foreground">
-            No yards match this filter. Try another one!
+            No yards match this filter. Try another city or amenity.
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">

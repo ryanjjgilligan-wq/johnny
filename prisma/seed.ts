@@ -3,28 +3,24 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 // Reusable Unsplash photo pools (dog-friendly backyards & lawns)
-// All URLs verified to return HTTP 200 from images.unsplash.com.
+// All URLs visually verified to show actual backyards / houses with yards.
 const yardPhotoPool = [
-  "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-  "https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=1200&q=80",
-  "https://images.unsplash.com/photo-1518155317743-a8ff43ea6a5f?w=1200&q=80",
-  "https://images.unsplash.com/photo-1564540586988-aa4e53c3d799?w=1200&q=80",
-  "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=1200&q=80",
-  "https://images.unsplash.com/photo-1601758125946-6ec2ef64daf8?w=1200&q=80",
-  "https://images.unsplash.com/photo-1597633425046-08f5110420b5?w=1200&q=80",
-  "https://images.unsplash.com/photo-1583511655826-05700d52f4d9?w=1200&q=80",
-  "https://images.unsplash.com/photo-1450778869180-41d0601e046e?w=1200&q=80",
-  "https://images.unsplash.com/photo-1530041539828-114de669390e?w=1200&q=80",
-  "https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=1200&q=80",
-  "https://images.unsplash.com/photo-1551717743-49959800b1f6?w=1200&q=80",
-  "https://images.unsplash.com/photo-1546238232-20216dec9f72?w=1200&q=80",
-  "https://images.unsplash.com/photo-1571566882372-1598d88abd90?w=1200&q=80",
-  "https://images.unsplash.com/photo-1542204165-65bf26472b9b?w=1200&q=80",
-  "https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?w=1200&q=80",
-  "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=1200&q=80",
-  "https://images.unsplash.com/photo-1568572933382-74d440642117?w=1200&q=80",
-  "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=1200&q=80",
-  "https://images.unsplash.com/photo-1591389703635-e15a07b842d7?w=1200&q=80",
+  "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&q=80",
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+  "https://images.unsplash.com/photo-1599809275671-b5942cabc7a2?w=1200&q=80",
+  "https://images.unsplash.com/photo-1602343168117-bb8ffe3e2e9f?w=1200&q=80",
+  "https://images.unsplash.com/photo-1571055107559-3e67626fa8be?w=1200&q=80",
+  "https://images.unsplash.com/photo-1597211833712-5e41faa202ea?w=1200&q=80",
+  "https://images.unsplash.com/photo-1592595896616-c37162298647?w=1200&q=80",
+  "https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=1200&q=80",
+  "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=1200&q=80",
+  "https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=1200&q=80",
+  "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1200&q=80",
+  "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1200&q=80",
+  "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1200&q=80",
+  "https://images.unsplash.com/photo-1594398901394-4e34939a4fd0?w=1200&q=80",
+  "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200&q=80",
+  "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&q=80",
 ];
 
 function pickPhotos(seed: number, count = 5): string[] {
